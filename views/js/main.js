@@ -449,10 +449,13 @@ var resizePizzas = function(size) {
   }
 
   function changePizzaSizes(size) {
-    var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
-    for (var i = 0; i < randomPizzas.length; i++) {
-      var dx = determineDx(randomPizzas[i], size);
+    
+    var randomPizzas = document.getElementsByClassName("randomPizzaContainer");    
+    for (var i = 0; i < 1; i++) {
+      var dx = determineDx(randomPizzas[i], size); 
       var newwidth = (randomPizzas[i].offsetWidth + dx) + 'px';
+    }
+    for (var i = 0; i < randomPizzas.length; i++) {
       randomPizzas[i].style.width = newwidth;
     }
   }
