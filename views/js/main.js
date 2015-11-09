@@ -460,7 +460,7 @@ var resizePizzas = function(size) {
     }
   }
 
-  changePizzaSizes(size);
+  requestAnimationFrame(changePizzaSizes(size));
 
   // User Timing API is awesome
   window.performance.mark("mark_end_resize");
@@ -523,7 +523,7 @@ function updatePositions() {
     items[i].style.left = items[i].basicLeft + 100 * phase[f] + 'px';
     f++;
    
-    if (f>5){
+    if (f>5) {
       f=0;
    }
 
@@ -556,5 +556,5 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
-  updatePositions();
+   requestAnimationFrame(updatePositions());
 });
