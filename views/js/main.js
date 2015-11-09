@@ -516,7 +516,9 @@ function updatePositions() {
    }
 
 */
-  for (var i = 0; i < items.length; i++) {
+
+  var itemLength = items.length;
+  for (var i = 0; i < itemLength; i++) {
     
    var phase = Math.sin((top / 1250) + (i % 5));
    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
