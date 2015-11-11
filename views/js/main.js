@@ -507,13 +507,13 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.getElementsByClassName('mover');
-  var top = document.body.scrollTop;
+  var top = document.body.scrollTop / 1250;
  
   var phase = [];
   for (var i = 0; i < 6; i++) {
  
 <<<<<<< HEAD
-    phase[i] = (Math.sin((top / 1250) + (i % 5))) - 1250 + 'px';
+    phase[i] = (Math.sin((top) + (i % 5))) - 1250 + 'px';
 =======
     
     phase[i] = 100 * Math.sin((top) + (i % 5)) - 1250;
