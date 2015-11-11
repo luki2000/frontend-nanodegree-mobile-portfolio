@@ -511,7 +511,8 @@ function updatePositions() {
  
   var phase = [];
   for (var i = 0; i < 6; i++) {
-    phase[i] = 100 * (Math.sin((top) + (i % 5)) - 1250) + 'px';
+ 
+    phase[i] = 100 * (Math.sin((top) + (i % 5))) - 1250;
    }
 
   var itemLength = items.length;
@@ -519,7 +520,10 @@ function updatePositions() {
   var move;
 
   for (var i = 0; i < itemLength; i++) {
-    move= items[i].basicLeft + phase[f];
+    
+    move= items[i].basicLeft + phase[f] + 'px';
+// original items[i].style.left = + 100 * phase + 'px';
+
     items[i].style.transform = 'translateX(' + move + ')';
     f++;
    
