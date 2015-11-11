@@ -513,7 +513,7 @@ function updatePositions() {
   for (var i = 0; i < 6; i++) {
  
     
-    phase[i] = 100 * Math.sin((top) + (i % 5)) - 1250;
+    phase[i] = 100 * (Math.sin((top) + (i % 5)) - 1250) + 'px';
 
    }
 
@@ -523,7 +523,7 @@ function updatePositions() {
 
   for (var i = 0; i < itemLength; i++) {
     
-    move= items[i].basicLeft + phase[f] + 'px';
+    move= items[i].basicLeft + phase[f];
     items[i].style.transform = 'translateX(' + move + ')';
     f++;
    
