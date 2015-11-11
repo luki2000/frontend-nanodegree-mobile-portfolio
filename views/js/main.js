@@ -512,13 +512,7 @@ function updatePositions() {
   var phase = [];
   for (var i = 0; i < 6; i++) {
  
-<<<<<<< HEAD
-    phase[i] = (Math.sin((top) + (i % 5))) - 1250 + 'px';
-=======
-    
-    phase[i] = 100 * Math.sin((top) + (i % 5)) - 1250;
->>>>>>> refs/remotes/origin/master
-
+    phase[i] = 100 * (Math.sin((top) + (i % 5))) - 1250;
    }
 
   var itemLength = items.length;
@@ -527,11 +521,9 @@ function updatePositions() {
 
   for (var i = 0; i < itemLength; i++) {
     
-<<<<<<< HEAD
-    move= items[i].basicLeft + 100 * phase[f];
-=======
     move= items[i].basicLeft + phase[f] + 'px';
->>>>>>> refs/remotes/origin/master
+// original items[i].style.left = + 100 * phase + 'px';
+
     items[i].style.transform = 'translateX(' + move + ')';
     f++;
    
