@@ -511,18 +511,7 @@ function updatePositions() {
  
   var phase = [];
   for (var i = 0; i < 6; i++) {
- 
-<<<<<<< HEAD
-    phase[i] = (Math.sin((top) + (i % 5))) - 1250 + 'px';
-=======
-    
-<<<<<<< HEAD
-    phase[i] = 100 * (Math.sin((top) + (i % 5)) - 1250) + 'px';
-=======
     phase[i] = 100 * Math.sin((top) + (i % 5)) - 1250;
->>>>>>> refs/remotes/origin/master
->>>>>>> refs/remotes/origin/gh-pages
-
    }
 
   var itemLength = items.length;
@@ -530,16 +519,7 @@ function updatePositions() {
   var move;
 
   for (var i = 0; i < itemLength; i++) {
-    
-<<<<<<< HEAD
-    move= items[i].basicLeft + phase[f];
-=======
-<<<<<<< HEAD
-    move= items[i].basicLeft + 100 * phase[f];
-=======
     move= items[i].basicLeft + phase[f] + 'px';
->>>>>>> refs/remotes/origin/master
->>>>>>> refs/remotes/origin/gh-pages
     items[i].style.transform = 'translateX(' + move + ')';
     f++;
    
