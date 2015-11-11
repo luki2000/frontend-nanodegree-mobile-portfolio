@@ -512,16 +512,18 @@ function updatePositions() {
   var phase = [];
   for (var i = 0; i < 6; i++) {
  
-    phase[i] = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+    phase[i] = Math.sin((top / 1250) + (i % 5));
 
    }
 
   var itemLength = items.length;
   var f = 0;
+  var move;
 
   for (var i = 0; i < itemLength; i++) {
     
-    items[i].style.left = items[i].basicLeft + 100 * phase[f] + 'px';
+    move= items[i].basicLeft + 100 * phase[f] - 1250 + 'px';
+    items[i].style.transform = 'translateX(' + move + ')';
     f++;
    
     if (f>5) {
