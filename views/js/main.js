@@ -461,7 +461,7 @@ var resizePizzas = function(size) {
     }
   }
 
-  requestAnimationFrame(changePizzaSizes(size));
+  changePizzaSizes(size);
 
   // User Timing API is awesome
   window.performance.mark("mark_end_resize");
@@ -512,7 +512,7 @@ function updatePositions() {
   var phase = [];
   for (var i = 0; i < 6; i++) {
  
-    phase[i] = Math.sin((top / 1250) + (i % 5));
+    phase[i] = (Math.sin((top / 1250) + (i % 5))) - 1250 + 'px';
 
    }
 
@@ -522,7 +522,7 @@ function updatePositions() {
 
   for (var i = 0; i < itemLength; i++) {
     
-    move= items[i].basicLeft + 100 * phase[f] - 1250 + 'px';
+    move= items[i].basicLeft + 100 * phase[f];
     items[i].style.transform = 'translateX(' + move + ')';
     f++;
    
@@ -559,5 +559,5 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
-   requestAnimationFrame(updatePositions());
+   updatePositions();
 });
