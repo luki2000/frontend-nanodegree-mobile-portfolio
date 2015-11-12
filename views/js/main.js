@@ -442,12 +442,10 @@ var resizePizzas = function(size) {
     
     for (var i = 0; i < randomPizzasLength; i++) {
       randomPizzas[i].style.width = newWidth + "%";
-    } 
-
+      } 
     }
 
-
-  changePizzaSizes(size);
+changePizzaSizes(size);
 
   // User Timing API is awesome
   window.performance.mark("mark_end_resize");
