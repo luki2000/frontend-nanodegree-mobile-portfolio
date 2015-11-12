@@ -511,8 +511,7 @@ function updatePositions() {
  
   var phase = [];
   for (var i = 0; i < 6; i++) {
- 
-    phase[i] = 100 * (Math.sin((top) + (i % 5))) - 1250;
+    phase[i] =100 * Math.sin((top) + (i % 5)) - 1250;
    }
 
   var itemLength = items.length;
@@ -521,17 +520,15 @@ function updatePositions() {
 
   for (var i = 0; i < itemLength; i++) {
     
-    move= items[i].basicLeft + phase[f] + 'px';
-// original items[i].style.left = + 100 * phase + 'px';
-
+    move = items[i].basicLeft + phase[f] + 'px'; 
     items[i].style.transform = 'translateX(' + move + ')';
     f++;
-   
     if (f>5) {
       f=0;
    }
-
+   window.animating = false;
   }
+ 
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
   // Super easy to create custom metrics.
@@ -544,7 +541,14 @@ function updatePositions() {
 }
 
 // runs updatePositions on scroll
-window.addEventListener('scroll', updatePositions);
+window.addEventListener('scroll', checkAnimation);
+
+function checkAnimation() {
+  if (!window.animating) {
+    window.requestAnimationFrame(updatePositions);
+    window.animating = true;
+  }
+}
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
