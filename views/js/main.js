@@ -510,7 +510,6 @@ function updatePositions() {
     if (f>5) {
       f=0;
    }
-   window.animating = false;
   }
  
 
@@ -525,14 +524,7 @@ function updatePositions() {
 }
 
 // runs updatePositions on scroll
-window.addEventListener('scroll', checkAnimation);
-
-function checkAnimation() {
-  if (!window.animating) {
-    window.requestAnimationFrame(updatePositions);
-    window.animating = true;
-  }
-}
+window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
@@ -548,4 +540,5 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
+  updatePositions();
 });
