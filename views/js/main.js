@@ -446,10 +446,11 @@ var resizePizzas = function(size) {
         }
     }
     changeSliderLabel(size);
-    // This function has gone through many changes, for more info check the commits.
+
+    // This function has gone through many changes, for more info check the commits history.
     //originally this function was called determineDx which returned a value that depicted the 
-    //the size difference between old a new pizza size when using changing the slider.
-    //It computed a lot of unecessary code to calculate into pixels what the new pizza size would be.
+    //the size difference between old and new pizza size in pixel size after changing the slider value.
+    //It computed a lot of unecessary code to calculat what the new pizza size would be.
     //Now we simply work with just percentage width to apply the new size removing the necessity to know the previous size.
     function changePizzaSizes(size) {
         switch (size) {
@@ -471,7 +472,7 @@ var resizePizzas = function(size) {
             "randomPizzaContainer");
         //store the length of the previous elements so that we save a bit of work for the browser in the loop further below
         var randomPizzasLength = randomPizzas.length
-            //Loops through all elements that we targetted and sets their new width percentage
+        //Loops through all elements that we targetted and sets their new width percentage
         for (var i = 0; i < randomPizzasLength; i++) {
             randomPizzas[i].style.width = newWidth + "%";
         }
@@ -512,6 +513,7 @@ function logAverageFrame(times) { // times is the array of User Timing measureme
         console.log("Average time to generate last 10 frames: " + sum / 10 +
             "ms");
     }
+   
     // The following code for sliding background pizzas was pulled from Ilya's demo found at:
     // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
     // Moves the sliding background pizzas based on scroll position
