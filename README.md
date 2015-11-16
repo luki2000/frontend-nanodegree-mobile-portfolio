@@ -28,3 +28,63 @@ Our menu is changing everyday so be sure to check our menu list frequently, we o
 4. Slide to the left to see smaller pizzas.
 
 That is all! Thank you for your time! 
+
+
+
+Web Sites Optimised with Grunt!
+
+To ensure good optmisation I have used 'Grunt' the The JavaScript Task Runner. It is a very useful too to optimise
+the components that make up the web sites. The Plugins I used are:
+
+uncss - to remove unecessary (unused) CSS styles particularly within bootsrap which had a lot of CSS styles
+cssmin - to minify css
+uglify - to minify js
+imagemin - to compress image file once size has been reduced to the desired dimensions
+
+Please see the package.json to see the installed plug-ins
+
+
+Now to actually use Grunt, Node.js had to first be installed, then Grunt had to be installed. Finally we had to install
+each individual plugins on the command line which you load up by right clicking on your project folder and selecting Git Bash (on Windows). 
+A typical line for installing would look like this.
+
+'npm install grunt-contrib-imagemin --save-dev'
+
+You then have to create a Gruntfile within your project. Please view my GruntFile to see the javascript that you would need to code.
+Once everything is nice and dandy you will need to run your gruntfile by simply typing grunt followed by the name you gave for your function.
+In my case to compress my image I kept it simple and gave the name of the function imagemin (same as the plugin name) in the gruntfile, within the function are the instructions to specify what I want to do with the image,
+like the level of compression I want, where I would like the images to be taken from and taken to after compression.The other plugins are not so different to execute.    
+
+
+
+The files and images that went through optimisation:
+
+Part 1 index.html
+
+CSS
+minified with cssmin - css/print.css
+
+JS
+minified with uglify - js/analytics.js
+minified with uglify - js/performatters.js
+
+Image
+compressed with imagemin - img/profilepic.jpg
+
+
+
+Part 2 pizza.html
+
+CSS
+minified with cssmin - views/css/boostrap-grid.css
+minified with cssmin - views/css/style.css
+
+JS
+minified with uglify - views/js/main.js
+
+images
+compressed with imagemin - views/images/backgroundPizza.png
+compressed with imagemin - views/images/frontpagePizzeria.jpg
+compressed with imagemin - views/images/pizza.png
+compressed with imagemin - views/images/pizzeria.jpg
+
