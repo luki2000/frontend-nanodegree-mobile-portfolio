@@ -37,15 +37,17 @@ To ensure good optmisation I have used 'Grunt' the The JavaScript Task Runner. I
 the components that make up the web sites. The Plugins I used are:
 
 uncss - to remove unecessary (unused) CSS styles particularly within bootsrap which had a lot of CSS styles
+
 cssmin - to minify css
+
 uglify - to minify js
+
 imagemin - to compress image file once size has been reduced to the desired dimensions
 
 Please see the package.json to see the installed plug-ins
 
 
-Now to actually use Grunt, Node.js had to first be installed, then Grunt had to be installed. Finally we had to install
-each individual plugins on the command line which you load up by right clicking on your project folder and selecting Git Bash (on Windows). 
+Now to actually use Grunt, Node.js had to first be installed, then Grunt had to be installed. Finally we had to install each individual plugins on the command line which you load up by right clicking on your project folder and selecting Git Bash (on Windows). 
 A typical line for installing would look like this.
 
 'npm install grunt-contrib-imagemin --save-dev'
